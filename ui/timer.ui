@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #74708C</string>
+  </property>
+  <widget class="QPushButton" name="btn_30sec">
+   <property name="geometry">
+    <rect>
+     <x>162</x>
+     <y>155</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #9E99BF;
+color: #F2EEB6;
+    font-family: Inter;
+    font-size: 12px;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>+30s</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_1m">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>154</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #9E99BF;
+color: #F2EEB6;
+    font-family: Inter;
+    font-size: 12px;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>+1m</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_5m">
+   <property name="geometry">
+    <rect>
+     <x>368</x>
+     <y>154</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #9E99BF;
+color: #F2EEB6;
+    font-family: Inter;
+    font-size: 12px;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string>+5m</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_run">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>580</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #7A7EBF;
+border-radius: 10px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../assets/icon/btn_run.svg</normaloff>../assets/icon/btn_run.svg</iconset>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="timer">
+   <property name="geometry">
+    <rect>
+     <x>213</x>
+     <y>106</y>
+     <width>173</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTimeEdit {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: normal;
+    color: #F2EEB6; /* Цвет текста */
+    background: transparent; /* Прозрачный фон */
+    border: none; /* Убираем границы */
+}
+
+QTimeEdit {
+/*    background-color: rgba(242, 238, 182, 0.1); /* Легкий оттенок */
+    border-radius: 5px; /* Скругление углов */
+}
+
+QTimeEdit::up-button, QTimeEdit::down-button {
+    width: 0px;
+    height: 0px;
+    border: none;
+}
+
+</string>
+   </property>
+   <property name="displayFormat">
+    <string>hh:mm:ss</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chkb_mute">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>33</width>
+     <height>33</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
