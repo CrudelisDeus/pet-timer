@@ -1,5 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 import sys
+from PyQt6.QtGui import QIcon
 
 from PyQt6.QtCore import QTime
 
@@ -8,6 +9,12 @@ import ui
 '''
 
 import gui_timer
+
+'''
+import dev function
+'''
+
+import fun_volume
 
 class App(QtWidgets.QMainWindow, gui_timer.Ui_Form):
     def __init__(self):
@@ -46,17 +53,15 @@ class App(QtWidgets.QMainWindow, gui_timer.Ui_Form):
                 border: none;
             }
             QCheckBox::indicator:unchecked {
-                image: url("assets/icon/unmute.svg");
-                background: #9E99BF;
-                border-radius: 10px;
+                background: transparent;
             }
             QCheckBox::indicator:checked {
-                image: url("assets/icon/mute.svg");
-                background: #9E99BF;
-                border-radius: 10px;
+                background: transparent;
             }
         """)
+        self.chkb_mute.stateChanged.connect(self._chkb_icon_change)
         self.chkb_mute.setIconSize(QtCore.QSize(20, 20))
+        self._chkb_icon_change()
 
     def _add_time(self, minutes=0, seconds=0):
         current_time = self.timer.time()
@@ -66,19 +71,20 @@ class App(QtWidgets.QMainWindow, gui_timer.Ui_Form):
         self.timer.setTime(new_time)
 
     def _start_timer(self):
-        total_seconds = self.timer.time().hour() * 3600 + \
-                        self.timer.time().minute() * 60 + \
-                        self.timer.time().second()
-
-        #
-        if self.chkb_mute.isChecked():
-            print("Чекбокс включен при старте")
+        if self.countdown_timer.isActive():
+            self.timer.setTime(QtCore.QTime(0, 0, 0))
+            self.countdown_timer.stop()
+            self._btn_disable_or_enable(True)
+            self.btn_run.setIcon(QIcon('assets/icon/btn_run.svg'))
         else:
-            print("Чекбокс выключен при старте")
+            total_seconds = self.timer.time().hour() * 3600 + \
+                            self.timer.time().minute() * 60 + \
+                            self.timer.time().second()
 
-        if total_seconds > 0:
-            self._btn_disable_or_enable(False)
-            self.countdown_timer.start(1000)
+            if total_seconds > 0:
+                self._btn_disable_or_enable(False)
+                self.btn_run.setIcon(QIcon('assets/icon/btn_run_stop.svg'))
+                self.countdown_timer.start(1000)
 
     def _update_time(self):
         current_time = self.timer.time()
@@ -89,6 +95,9 @@ class App(QtWidgets.QMainWindow, gui_timer.Ui_Form):
             self.countdown_timer.stop()
             self.timer.setTime(QtCore.QTime(0,0,0))
             self._btn_disable_or_enable(True)
+            if self.chkb_mute.isChecked():
+                fun_volume.mute()
+
         else:
             self.timer.setTime(
                 QtCore.QTime(0, 0, 0).addSecs(
@@ -100,7 +109,22 @@ class App(QtWidgets.QMainWindow, gui_timer.Ui_Form):
         self.btn_1m.setEnabled(enable)
         self.btn_5m.setEnabled(enable)
         self.chkb_mute.setEnabled(enable)
+        if enable:
+            self._change_color_label_mute('#262626')
+        else:
+            self._change_color_label_mute('#0D0D0D')
 
+    def _chkb_icon_change(self):
+        if self.chkb_mute.isChecked():
+            self.label_mute.setPixmap(QtGui.QPixmap("assets/icon/mute.svg"))
+            self._change_color_label_mute('#262626')
+        else:
+            self.label_mute.setPixmap(QtGui.QPixmap("assets/icon/unmute.svg"))
+            self._change_color_label_mute('#262626')
+
+    def _change_color_label_mute(self, color=''):
+        self.label_mute_bkg.setStyleSheet(f"background-color: {color};"
+                                          "\nborder-radius: 10px;")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

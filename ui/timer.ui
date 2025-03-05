@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,7 +17,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #74708C</string>
+   <string notr="true">background-color: #BFBFBF</string>
   </property>
   <widget class="QPushButton" name="btn_30sec">
    <property name="geometry">
@@ -26,11 +29,27 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #9E99BF;
-color: #F2EEB6;
-    font-family: Inter;
-    font-size: 12px;
-border-radius: 10px;</string>
+    <string notr="true">QPushButton {
+background-color: #262626;
+color: #F2F2F2;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #1F1F1F;
+}
+
+QPushButton:pressed {
+background-color: #141414;
+}
+
+QPushButton:disabled {
+background-color: #0D0D0D;
+
+}
+</string>
    </property>
    <property name="text">
     <string>+30s</string>
@@ -46,11 +65,27 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #9E99BF;
-color: #F2EEB6;
-    font-family: Inter;
-    font-size: 12px;
-border-radius: 10px;</string>
+    <string notr="true">QPushButton {
+background-color: #262626;
+color: #F2F2F2;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #1F1F1F;
+}
+
+QPushButton:pressed {
+background-color: #141414;
+}
+
+QPushButton:disabled {
+background-color: #0D0D0D;
+
+}
+</string>
    </property>
    <property name="text">
     <string>+1m</string>
@@ -66,11 +101,27 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #9E99BF;
-color: #F2EEB6;
-    font-family: Inter;
-    font-size: 12px;
-border-radius: 10px;</string>
+    <string notr="true">QPushButton {
+background-color: #262626;
+color: #F2F2F2;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #1F1F1F;
+}
+
+QPushButton:pressed {
+background-color: #141414;
+}
+
+QPushButton:disabled {
+background-color: #0D0D0D;
+
+}
+</string>
    </property>
    <property name="text">
     <string>+5m</string>
@@ -86,8 +137,27 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: #7A7EBF;
-border-radius: 10px;</string>
+    <string notr="true">QPushButton {
+background-color: #262626;
+color: #F2F2F2;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #1F1F1F;
+}
+
+QPushButton:pressed {
+background-color: #141414;
+}
+
+QPushButton:disabled {
+background-color: #0D0D0D;
+
+}
+</string>
    </property>
    <property name="text">
     <string/>
@@ -95,6 +165,12 @@ border-radius: 10px;</string>
    <property name="icon">
     <iconset>
      <normaloff>../assets/icon/btn_run.svg</normaloff>../assets/icon/btn_run.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
    </property>
   </widget>
   <widget class="QTimeEdit" name="timer">
@@ -107,7 +183,7 @@ border-radius: 10px;</string>
     </rect>
    </property>
    <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
@@ -117,7 +193,7 @@ border-radius: 10px;</string>
     font-family: Inter;
     font-size: 40px;
     font-weight: normal;
-    color: #F2EEB6; /* Цвет текста */
+    color: #F2F2F2; /* Цвет текста */
     background: transparent; /* Прозрачный фон */
     border: none; /* Убираем границы */
 }
@@ -155,7 +231,12 @@ QTimeEdit::up-button, QTimeEdit::down-button {
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">            QCheckBox{
+background: transparent;}            
+QCheckBox::indicator {
+                background: transparent;
+                border: none;
+            }</string>
    </property>
    <property name="text">
     <string/>
@@ -164,9 +245,77 @@ QTimeEdit::up-button, QTimeEdit::down-button {
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QLabel" name="label_mute">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>16</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../assets/icon/unmute.svg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_mute_bkg">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+background: #262626;
+border-radius: 10px;
+}
+
+QLabel:hover {
+background: #1F1F1F;
+}
+
+QPushButton:pressed {
+        background-color: #141414;
+}
+
+QLabel:disabled {
+        background-color: #0D0D0D;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_mute_bkg</zorder>
+  <zorder>label_mute</zorder>
+  <zorder>btn_30sec</zorder>
+  <zorder>btn_1m</zorder>
+  <zorder>btn_5m</zorder>
+  <zorder>btn_run</zorder>
+  <zorder>timer</zorder>
+  <zorder>chkb_mute</zorder>
  </widget>
  <resources>
-  <include location="res.qrc"/>
+  <include location="../rec.qrc"/>
  </resources>
  <connections/>
 </ui>
