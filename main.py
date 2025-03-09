@@ -14,6 +14,7 @@ import dev function
 
 import fun_volume
 import fun_lock
+import fun_power
 
 class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
     def __init__(self):
@@ -104,6 +105,8 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
                 fun_volume.mute()
             if not self.btn_fun_lock.isChecked():
                 fun_lock.lock_screen()
+            if not self.btn_fun_power.isChecked():
+                fun_power.power()
             self._reset_timer()
         else:
             new_time = QtCore.QTime(remaining_seconds // 3600,
