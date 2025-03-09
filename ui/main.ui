@@ -264,7 +264,7 @@ background-color: #03161F;
      <string>+5 min</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_fun_mute">
+   <widget class="QPushButton" name="btn_fun_volume">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -308,7 +308,7 @@ background-color: #03161F;
 </string>
     </property>
     <property name="text">
-     <string>mute: on</string>
+     <string>volume: on</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_fun_lock">

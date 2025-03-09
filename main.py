@@ -12,8 +12,6 @@ import gui_main
 import dev function
 '''
 
-#
-
 class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -34,6 +32,45 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
             self._update_time
         )
 
+        # btn function
+        self.btn_fun_volume.setCheckable(True)
+        self.btn_fun_volume.setChecked(True)
+        self.btn_fun_volume.clicked.connect(
+            lambda: self._set_state_fun_btn(
+                self.btn_fun_volume, 'volume'
+            )
+        )
+
+        self.btn_fun_lock.setCheckable(True)
+        self.btn_fun_lock.setChecked(True)
+        self.btn_fun_lock.clicked.connect(
+            lambda: self._set_state_fun_btn(
+                self.btn_fun_lock, 'lock screen'
+            )
+        )
+
+        self.btn_fun_power.setCheckable(True)
+        self.btn_fun_power.setChecked(True)
+        self.btn_fun_power.clicked.connect(
+            lambda: self._set_state_fun_btn(
+                self.btn_fun_power, 'power'
+            )
+        )
+
+    # function
+    # --------
+
+    def _set_state_fun_btn(self, button, button_name):
+        if button.isChecked():
+            state = 'on'
+        else:
+            state = 'off'
+
+        button.setText(f'{button_name}: {state}')
+
+    # timer
+    # -----
+
     def _add_time_to_timer(self, minutes=0, seconds=0):
         current_time = self.timeEdit.time()
         new_time = current_time.addSecs(
@@ -41,13 +78,12 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
         )
         self.timeEdit.setTime(new_time)
 
-    # timer
-
     def _start_timer(self):
         total_seconds = self.timeEdit.time().hour() * 3600 + \
                         self.timeEdit.time().minute() * 60 + \
                         self.timeEdit.time().second()
         if total_seconds > 0:
+            self._enable_or_disable(False)
             self.countdown_timer.start(1000)
 
     def _update_time(self):
@@ -57,14 +93,28 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
                             current_time.second() - 1
 
         if remaining_seconds <= 0:
+            # set 0 timer
             self.countdown_timer.stop()
             self.timeEdit.setTime(QtCore.QTime(0, 0, 0))
+            # enable btn
+            self._enable_or_disable(True)
         else:
             new_time = QtCore.QTime(remaining_seconds // 3600,
                                     (remaining_seconds % 3600) // 60,
                                     remaining_seconds % 60)
             self.timeEdit.setTime(new_time)
 
+    # other
+    # -----
+
+    def _enable_or_disable(self, enable=True):
+        """button disable or enable"""
+        self.btn_30sec.setEnabled(enable)
+        self.btn_1min.setEnabled(enable)
+        self.btn_5min.setEnabled(enable)
+        self.btn_fun_volume.setEnabled(enable)
+        self.btn_fun_lock.setEnabled(enable)
+        self.btn_fun_power.setEnabled(enable)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

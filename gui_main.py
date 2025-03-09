@@ -143,11 +143,11 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.btn_5min.setObjectName("btn_5min")
-        self.btn_fun_mute = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btn_fun_mute.setGeometry(QtCore.QRect(30, 30, 100, 27))
-        self.btn_fun_mute.setMinimumSize(QtCore.QSize(100, 27))
-        self.btn_fun_mute.setMaximumSize(QtCore.QSize(100, 27))
-        self.btn_fun_mute.setStyleSheet("QPushButton {\n"
+        self.btn_fun_volume = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_fun_volume.setGeometry(QtCore.QRect(30, 30, 100, 27))
+        self.btn_fun_volume.setMinimumSize(QtCore.QSize(100, 27))
+        self.btn_fun_volume.setMaximumSize(QtCore.QSize(100, 27))
+        self.btn_fun_volume.setStyleSheet("QPushButton {\n"
 "background-color: #304040;\n"
 "color: #C9D1C8;\n"
 "font-family: Inter;\n"
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
 "background-color: #03161F;\n"
 "}\n"
 "")
-        self.btn_fun_mute.setObjectName("btn_fun_mute")
+        self.btn_fun_volume.setObjectName("btn_fun_volume")
         self.btn_fun_lock = QtWidgets.QPushButton(parent=self.centralwidget)
         self.btn_fun_lock.setGeometry(QtCore.QRect(250, 30, 100, 27))
         self.btn_fun_lock.setMinimumSize(QtCore.QSize(100, 27))
@@ -231,6 +231,6 @@ class Ui_MainWindow(object):
         self.btn_30sec.setText(_translate("MainWindow", "+30 sec"))
         self.btn_1min.setText(_translate("MainWindow", "+1 min"))
         self.btn_5min.setText(_translate("MainWindow", "+5 min"))
-        self.btn_fun_mute.setText(_translate("MainWindow", "mute: on"))
+        self.btn_fun_volume.setText(_translate("MainWindow", "volume: on"))
         self.btn_fun_lock.setText(_translate("MainWindow", "lock screen: on"))
         self.btn_fun_power.setText(_translate("MainWindow", "power: on"))
