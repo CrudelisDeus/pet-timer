@@ -1,2 +1,2 @@
-pyuic6 ui/timer.ui -o gui_timer.py
+pyuic6 ui/main.ui -o gui_main.py
 
