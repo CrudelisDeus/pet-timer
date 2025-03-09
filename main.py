@@ -12,6 +12,8 @@ import gui_main
 import dev function
 '''
 
+import fun_volume
+
 class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -97,11 +99,9 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
                             current_time.second() - 1
 
         if remaining_seconds <= 0:
-            # set 0 timer
-            self.countdown_timer.stop()
-            self.timeEdit.setTime(QtCore.QTime(0, 0, 0))
-            # enable btn
-            self._btn_enable_or_disable(True)
+            if not self.btn_fun_volume.isChecked():
+                fun_volume.mute()
+            self._reset_timer()
         else:
             new_time = QtCore.QTime(remaining_seconds // 3600,
                                     (remaining_seconds % 3600) // 60,
