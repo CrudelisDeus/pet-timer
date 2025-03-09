@@ -79,12 +79,16 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
         self.timeEdit.setTime(new_time)
 
     def _start_timer(self):
-        total_seconds = self.timeEdit.time().hour() * 3600 + \
-                        self.timeEdit.time().minute() * 60 + \
-                        self.timeEdit.time().second()
-        if total_seconds > 0:
-            self._enable_or_disable(False)
-            self.countdown_timer.start(1000)
+        if self.countdown_timer.isActive():
+            self._reset_timer()
+        else:
+            total_seconds = self.timeEdit.time().hour() * 3600 + \
+                            self.timeEdit.time().minute() * 60 + \
+                            self.timeEdit.time().second()
+            if total_seconds > 0:
+                self.btn_run.setText('stop')
+                self._btn_enable_or_disable(False)
+                self.countdown_timer.start(1000)
 
     def _update_time(self):
         current_time = self.timeEdit.time()
@@ -97,17 +101,29 @@ class App(QtWidgets.QMainWindow, gui_main.Ui_MainWindow):
             self.countdown_timer.stop()
             self.timeEdit.setTime(QtCore.QTime(0, 0, 0))
             # enable btn
-            self._enable_or_disable(True)
+            self._btn_enable_or_disable(True)
         else:
             new_time = QtCore.QTime(remaining_seconds // 3600,
                                     (remaining_seconds % 3600) // 60,
                                     remaining_seconds % 60)
             self.timeEdit.setTime(new_time)
 
+    def _reset_timer(self):
+        self.countdown_timer.stop()
+        self.timeEdit.setTime(QtCore.QTime(0, 0, 0))
+        self._btn_enable_or_disable(True)
+        self.btn_run.setText('start')
+        self.btn_fun_volume.setChecked(True)
+        self.btn_fun_volume.setText('volume: on')
+        self.btn_fun_lock.setChecked(True)
+        self.btn_fun_lock.setText('lock screen: on')
+        self.btn_fun_power.setChecked(True)
+        self.btn_fun_power.setText('power: on')
+
     # other
     # -----
 
-    def _enable_or_disable(self, enable=True):
+    def _btn_enable_or_disable(self, enable=True):
         """button disable or enable"""
         self.btn_30sec.setEnabled(enable)
         self.btn_1min.setEnabled(enable)
