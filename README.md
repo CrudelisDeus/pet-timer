@@ -22,3 +22,24 @@ Many of us enjoy watching a movie or listening to a show before falling asleep. 
 - ✅ Auto Shutdown – Shuts down the PC at a scheduled time to save energy and prevent overnight playback.
 
 With this tool, you can set a timer and let it take care of the rest. Whether you need a silent room for deep sleep or want to avoid unnecessary power consumption, this solution ensures a more comfortable and uninterrupted night.
+
+### Installation
+
+1. **Clone the repository** 
+
+```bash
+git clone https://github.com/CrudelisDeus/pet-timer
+cd timer
+```
+
+2. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+``` 
+
+3. **Run the application**
+
+```bash
+python main.py
+``` 
