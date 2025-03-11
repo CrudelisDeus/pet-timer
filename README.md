@@ -6,11 +6,12 @@
 
 ## PET project
 
-**Smart Sleep Timer for a Peaceful Night**
-
 <p align="center">
   <img src="assets/design.png" alt="interface">
 </p>
+
+**Smart Sleep Timer for a Peaceful Night**
+
 
 Many of us enjoy watching a movie or listening to a show before falling asleep. However, sometimes, the screen keeps playing all night, disrupting sleep and consuming unnecessary energy. To solve this, I’ve developed a Smart Sleep Timer, a simple yet effective solution for better nighttime rest.
 
