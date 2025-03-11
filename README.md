@@ -2,7 +2,7 @@
   <img src="assets/logo.ico" alt="Logo">
 </p>
 
-# Timer
+# Smart Sleep Timer
 
 ### PET project
 
