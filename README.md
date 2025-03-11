@@ -6,6 +6,17 @@
 
 ## PET project
 
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 16px;">
+  <a>
+    <img src="https://img.shields.io/badge/python-3.11.9-blue">
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/PyQt6-6.8.1-blue">
+  </a>
+  <a>
+  </a>
+</div>
+
 ![](assets/design.png)
 
 **Smart Sleep Timer for a Peaceful Night**
