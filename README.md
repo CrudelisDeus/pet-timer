@@ -23,6 +23,12 @@ Many of us enjoy watching a movie or listening to a show before falling asleep. 
 
 With this tool, you can set a timer and let it take care of the rest. Whether you need a silent room for deep sleep or want to avoid unnecessary power consumption, this solution ensures a more comfortable and uninterrupted night.
 
+## Getting Started
+
+### Prerequisites
+
+To run the **Smart Sleep Timer**, make sure you have **Python 3.x** installed on your system.
+
 ### Installation
 
 1. **Clone the repository** 
