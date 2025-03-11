@@ -6,9 +6,7 @@
 
 ## PET project
 
-<p align="center">
-  <img src="assets/design.png" alt="interface">
-</p>
+![](assets/design.png)
 
 **Smart Sleep Timer for a Peaceful Night**
 
