@@ -20,6 +20,6 @@ Key Features:
 
 With this tool, you can set a timer and let it take care of the rest. Whether you need a silent room for deep sleep or want to avoid unnecessary power consumption, this solution ensures a more comfortable and uninterrupted night.
 
-<p>
-  <img src="assets/design.png">
+<p align="center">
+  <img src="assets/design.png" alt="interface">
 </p>
