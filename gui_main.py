@@ -15,6 +15,9 @@ class Ui_MainWindow(object):
         MainWindow.resize(600, 300)
         MainWindow.setMinimumSize(QtCore.QSize(600, 300))
         MainWindow.setMaximumSize(QtCore.QSize(600, 300))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("ui\\../assets/logo.ico"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet("background: #5B7065")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(600, 300))
@@ -227,7 +230,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Timer"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Smart Sleep Timer"))
         self.btn_run.setText(_translate("MainWindow", "start"))
         self.timeEdit.setDisplayFormat(_translate("MainWindow", "hh:mm:ss"))
         self.btn_30sec.setText(_translate("MainWindow", "+30 sec"))
