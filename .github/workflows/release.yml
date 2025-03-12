@@ -1,4 +1,4 @@
-name: Build and Release Smart Sleep Timer
+name: build and release app
 
 on:
   push:
