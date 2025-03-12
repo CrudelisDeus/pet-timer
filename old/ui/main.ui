@@ -26,8 +26,8 @@
    <string>Smart Sleep Timer</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../assets/logo.ico</normaloff>../assets/logo.ico</iconset>
+   <iconset resource="../resources_rc.qrc">
+    <normaloff>:/assets/logo.ico</normaloff>:/assets/logo.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #5B7065</string>
@@ -423,6 +423,8 @@ background-color: #03161F;
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources_rc.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,6 +1,5 @@
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtWidgets
 import sys
-from PyQt6.QtGui import QIcon
 
 '''
 import ui
