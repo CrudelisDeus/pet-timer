@@ -22,13 +22,13 @@ jobs:
         run: pip install -r requirements.txt pyinstaller
 
       - name: build
-        run: pyinstaller --name 'Smart Sleep Timer' --windowed --onefile --specpath . main.py
+        run: pyinstaller --name 'smart_sleep_timer-windows-amd64' --windowed --onefile  --icon=assets/logo.ico main.py
 
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Smart-Sleep-Timer
-          path: dist/Smart Sleep Timer.exe
+          path: dist/smart_sleep_timer-windows-amd64.exe
 
   release:
     needs: build
@@ -45,6 +45,14 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/Smart Sleep Timer.exe
+          files: dist/smart_sleep_timer-windows-amd64.exe
+          body: |
+            # Smart Sleep Timer v1.0.1
+            
+            ## How to Use (windows)?
+            
+            1. Download the application.
+            
+            2. Run `smart_sleep_timer-windows-amd64.exe`.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
