@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.ico" alt="Logo">
+  <img src="old/assets/logo.ico" alt="Logo">
 </p>
 
 # Smart Sleep Timer
@@ -17,7 +17,7 @@
   </a>
 </div>
 
-![](assets/design.png)
+![](old/assets/design.png)
 
 **Smart Sleep Timer for a Peaceful Night**
 
