@@ -1,0 +1,48 @@
+name: Build and Release Smart Sleep Timer
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: check rep
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: install dependencies
+        run: pip install -r requirements.txt pyinstaller
+
+      - name: build
+        run: pyinstaller --name 'Smart Sleep Timer' --windowed --onefile --specpath . main.py
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Smart-Sleep-Timer
+          path: dist/Smart Sleep Timer.exe
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download built EXE
+        uses: actions/download-artifact@v4
+        with:
+          name: Smart-Sleep-Timer
+          path: dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/Smart Sleep Timer.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
