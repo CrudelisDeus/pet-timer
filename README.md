@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="old/assets/logo.ico" alt="Logo">
+  <img src="assets/logo.ico" alt="Logo">
 </p>
 
 # Smart Sleep Timer
@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/python-3.11.9-blue">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/PyQt6-6.8.1-blue">
+    <img src="https://img.shields.io/badge/PySide6-6.8.2.1-blue">
   </a>
   <a>
   </a>
