@@ -42,12 +42,17 @@ jobs:
           name: Smart-Sleep-Timer
           path: dist
 
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          echo "TAG_VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: dist/smart_sleep_timer-windows-amd64.exe
           body: |
-            # Smart Sleep Timer v1.0.1
+            # Smart Sleep Timer ${{ steps.extract_version.outputs.TAG_VERSION }}
             
             ## How to Use (windows)?
             
