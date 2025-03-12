@@ -9,9 +9,10 @@
     <img src="https://img.shields.io/badge/python-3.11.9-blue">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/PySide6-6.8.2.1-blue">
+    <img src="https://img.shields.io/badge/PySide6-6.8.2.1-red">
   </a>
   <a>
+    <img src="https://img.shields.io/badge/pycaw-20240210-red">
   </a>
 </div>
 
