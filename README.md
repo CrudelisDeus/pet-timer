@@ -17,7 +17,7 @@
   </a>
 </div>
 
-![](old/assets/design.png)
+![](assets/design.png)
 
 **Smart Sleep Timer for a Peaceful Night**
 
