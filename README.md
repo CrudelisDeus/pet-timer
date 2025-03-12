@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="assets/logo.ico" alt="Logo">
-</p>
+![](assets/logo.svg)
 
 # Smart Sleep Timer
 
