@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Sleep Timer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../rc.qrc">
+    <normaloff>:/assets/logo.ico</normaloff>:/assets/logo.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: #5B7065</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>600</width>
+     <height>300</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>600</width>
+     <height>300</height>
+    </size>
+   </property>
+   <widget class="QPushButton" name="btn_run">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>243</y>
+      <width>540</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>540</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>540</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 15px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>start</string>
+    </property>
+   </widget>
+   <widget class="QTimeEdit" name="timeEdit">
+    <property name="geometry">
+     <rect>
+      <x>213</x>
+      <y>126</y>
+      <width>173</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>173</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>173</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTimeEdit {
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: normal;
+    color: #C9D1C8;
+    background: transparent; 
+    border: none;
+}
+
+QTimeEdit {
+    border-radius: 5px; 
+}
+
+QTimeEdit::up-button, QTimeEdit::down-button {
+    width: 0px;
+    height: 0px;
+    border: none;
+}
+
+</string>
+    </property>
+    <property name="displayFormat">
+     <string>hh:mm:ss</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_30sec">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>174</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 15px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+30 sec</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_1min">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>174</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 15px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+1 min</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_5min">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>174</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 15px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+5 min</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_fun_volume">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>volume: on</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_fun_lock">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>30</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>lock screen: on</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_fun_power">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>30</y>
+      <width>100</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>27</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: #304040;
+color: #C9D1C8;
+font-family: Inter;
+font-size: 12px;
+border-radius: 10px;
+}
+
+QPushButton:hover {
+background-color: #374A4A;
+}
+
+QPushButton:pressed {
+background-color: #04202C;
+}
+
+QPushButton:disabled {
+background-color: #03161F;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>power: on</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>
